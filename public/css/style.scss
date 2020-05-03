@@ -1,0 +1,385 @@
+@font-face{
+	font-family:"roboto";
+	src : url(../assets/fonts/roboto/Roboto-Regular.ttf)
+}
+@font-face{
+	font-family:"Raleway_SM";
+	src : url(../assets/fonts/raleway/Raleway-SemiBold.ttf)
+}
+@font-face{
+	font-family:"Raleway";
+	src : url(../assets/fonts/raleway/Raleway-Medium.ttf)
+}
+
+$blue: #0030FA;
+$black : #0000;
+$roboto:  'Roboto', sans-serif;
+$raleway: 'Raleway', sans-serif;
+$ralewaySM: 'Raleway_SM', sans-serif;
+
+@mixin btnTrans(){
+    button{
+        border:$blue solid 1px;
+        background: transparent;
+        border-radius: 20px;
+        padding: 5px 30px;
+        transition: 0.5s;
+    }
+
+    button:hover{
+        background: $blue;
+        color: #fff;
+    }
+}
+
+@mixin btnBleu(){
+    button{
+        border:$blue solid 1px;
+        background: $blue;
+        border-radius: 20px;
+        padding: 5px 30px;
+        transition: 0.5s;
+
+        a{
+            color: #fff;
+            font-family: $roboto;
+        }
+    }
+
+    button:hover{
+        background: transparent;
+         
+        a{
+            color: $blue;
+        }
+    }
+}
+
+html{
+    font-size: 100%;
+}
+body{
+    overflow-x: hidden;
+}
+header{
+    height: 10vh;
+}
+header nav ul li{
+    padding: 0 3rem;
+    a{
+        font-family: $roboto;
+    }
+}
+
+main{
+    width: 90vw;
+    margin: auto;
+}
+
+main .accueil{
+    height: 90vh;
+    img{
+        right: -14%;
+        width: 40%;
+        top: 10%;
+    }
+
+    .w-52{
+        padding-top: 8%;
+        padding-bottom: 15%;
+        width: 35rem;
+    }
+
+    .main{
+        padding: 1rem 0;
+        h1{
+            font-size: 3rem;
+            font-family: $ralewaySM;
+        }
+        h2{
+            font-size: 2.2rem;
+            font-family: $roboto;
+        }
+    }
+    .more{
+        div{
+            padding: 0.5rem 0;
+            p{
+                margin: 0;
+                padding-bottom: 0.2rem;
+                font-size: 1.4rem;
+                font-family: $roboto;
+            }
+        }
+        
+       @include btnTrans()
+        }
+        
+        .reseaux{
+            ul li{
+                display: block;
+                margin: auto;
+                background:$blue;
+                margin: 1.5rem;
+                padding: 10px 15px;
+                border-radius: 50px;
+                a{
+                    
+                    i{
+                        color:#fff;
+                        font-size: 2rem;
+                    }
+                }
+            }
+        }
+    
+}
+    
+
+main .projet{
+   
+    .absolute{
+        position: absolute;
+        left: -20%;
+        width: 40%;
+        top: -7%;
+    }
+
+    height: auto;
+    padding: 10% 0;
+    .title_projects{
+        padding: 0px 0px 5rem 0px;
+        max-width: 40rem;
+        h2{
+            font-family: $raleway;
+            font-size: 2rem;
+            text-align: center;
+        }
+        p{
+            font-family: $roboto;
+            font-size: 1.3rem;
+            text-align: center;
+        }
+    }
+    .container_card{
+        
+        .inverse{
+            flex-direction: row-reverse;
+            text-align: right;
+            justify-content: right;
+         }
+
+        .grid__item{
+            display: flex;
+            align-items: center;
+            height: auto;
+            margin: 4rem 0;
+            justify-content: left;
+           
+        
+            
+            .coq{
+                display: flex;
+                align-items: center;
+                justify-content: space-evenly;
+                border-radius: 20px;
+                border: 1px solid $blue;
+                box-shadow: -8px 10px 1px $blue;
+                font-family: $ralewaySM;
+
+                img{
+                    width: 40%;
+                    padding: 1rem 0;
+                }
+
+                h3{
+                    font-size: 2rem;
+                }
+               
+            }
+            .description{
+               display: flex;
+               flex-direction: column;
+               justify-content: center;
+               align-items: center;
+               font-family: $raleway;
+
+               div{
+                   width: 30rem;
+               }
+    
+               h4{
+                   margin: 1rem;
+                   font-size: 1.4rem;
+               }
+
+               @include btnTrans()
+                
+               
+            }
+        }
+              
+    }
+}
+
+main .contact{
+    img{
+        right: -30%;
+        width: 40%;
+        top: 13%;
+    }
+    height: 100vh;
+    
+
+    .title_contact{
+        padding-top: 8%;
+        display: block;
+        margin-right: auto;
+
+        h4{
+            font-family: $raleway;
+            font-size: 2rem;
+        }
+        button{
+            background: transparent;
+            color: $blue;
+            padding: 5px 30px;
+            border-radius: 20px;
+            color:#fff;
+            margin: 1.5rem 0;
+        }
+
+        
+    }
+    .container_form{
+        display: block;
+        margin: auto;
+        max-width: 50rem;
+        padding-top: 5%;
+    }
+    form{
+        .flex{
+            width: 100%;
+            justify-content: space-between;
+            input{
+                width: 49%;
+                display: flex;
+            }
+        }
+
+        input{
+            margin: 2rem 0;
+            border-bottom: 1px solid #B3AEAE;
+            color: $blue;
+            outline: none;
+        }
+        textarea{
+            border-bottom: 1px solid #B3AEAE;
+            color: $blue;
+            outline: none;
+        }
+        #sub{
+            display: block;
+            margin-left: auto;
+            border: 1px solid $blue;
+            color: #fff;
+            padding: 5px 30px;
+            border-radius: 20px;
+            background: $blue;
+            transition: 0.5s;
+            cursor: pointer;
+        }
+
+        #sub:hover{
+            background: transparent;
+            color: $blue;
+        }
+    }
+}
+
+svg{
+    width: 18REM;
+    position: absolute;
+    bottom: 0%;
+    left: 5%;
+    align-self: center;
+    justify-self: center;
+}
+
+svg #micro_bleu_bas, #micro_bleu_haut{
+    animation-duration: 1.2s;
+    animation-name: animate ;
+    animation-iteration-count: infinite;
+    animation-direction: alternate;
+}
+
+@keyframes animate{
+    from{
+        transform: translateX(0) translateY(0);
+        opacity: 0;
+    }
+    to {
+        transform: translateX(25px) translateY(-25px);
+        opacity: 1;
+    }
+}
+//svg phone
+.st0{enable-background:new    ;}
+.st1{clip-path:url(#SVGID_2_);enable-background:new    ;}
+.st2{clip-path:url(#SVGID_4_);enable-background:new    ;}
+.st3{clip-path:url(#SVGID_6_);enable-background:new    ;}
+.st4{clip-path:url(#SVGID_8_);enable-background:new    ;}
+.st5{clip-path:url(#SVGID_10_);enable-background:new    ;}
+.st6{clip-path:url(#SVGID_12_);enable-background:new    ;}
+.st7{clip-path:url(#SVGID_14_);enable-background:new    ;}
+.st8{clip-path:url(#SVGID_16_);enable-background:new    ;}
+.st9{clip-path:url(#SVGID_18_);enable-background:new    ;}
+.st10{clip-path:url(#SVGID_20_);enable-background:new    ;}
+.st11{clip-path:url(#SVGID_22_);enable-background:new    ;}
+.st12{clip-path:url(#SVGID_24_);enable-background:new    ;}
+.st13{clip-path:url(#SVGID_26_);enable-background:new    ;}
+.st14{clip-path:url(#SVGID_28_);enable-background:new    ;}
+.st15{clip-path:url(#SVGID_30_);enable-background:new    ;}
+.st16{clip-path:url(#SVGID_32_);enable-background:new    ;}
+.st17{clip-path:url(#SVGID_34_);enable-background:new    ;}
+.st18{clip-path:url(#SVGID_36_);enable-background:new    ;}
+.st19{clip-path:url(#SVGID_38_);enable-background:new    ;}
+.st20{clip-path:url(#SVGID_40_);enable-background:new    ;}
+.st21{clip-path:url(#SVGID_42_);enable-background:new    ;}
+.st22{clip-path:url(#SVGID_44_);enable-background:new    ;}
+.st23{clip-path:url(#SVGID_46_);enable-background:new    ;}
+.st24{clip-path:url(#SVGID_48_);enable-background:new    ;}
+.st25{clip-path:url(#SVGID_50_);enable-background:new    ;}
+.st26{clip-path:url(#SVGID_52_);enable-background:new    ;}
+.st27{clip-path:url(#SVGID_54_);enable-background:new    ;}
+.st28{clip-path:url(#SVGID_56_);enable-background:new    ;}
+.st29{fill:#858585;}
+.st30{fill:#D6D6D6;}
+.st31{clip-path:url(#SVGID_58_);enable-background:new    ;}
+.st32{clip-path:url(#SVGID_60_);enable-background:new    ;}
+.st33{clip-path:url(#SVGID_62_);enable-background:new    ;}
+.st34{clip-path:url(#SVGID_64_);enable-background:new    ;}
+.st35{clip-path:url(#SVGID_66_);enable-background:new    ;}
+.st36{clip-path:url(#SVGID_68_);enable-background:new    ;}
+.st37{fill:#0020A6;}
+.st38{fill:#001FA1;}
+.st39{fill:#001E9C;}
+.st40{fill:#002ADC;}
+.st41{clip-path:url(#SVGID_70_);enable-background:new    ;}
+.st42{fill:#001983;}
+.st43{clip-path:url(#SVGID_72_);enable-background:new    ;}
+.st44{clip-path:url(#SVGID_74_);enable-background:new    ;}
+.st45{clip-path:url(#SVGID_76_);enable-background:new    ;}
+.st46{clip-path:url(#SVGID_78_);enable-background:new    ;}
+
+
+@media screen and (max-width: 1500px) {
+    main .accueil .w-52{
+        padding-bottom: 8%;
+    }
+
+    svg{
+        width: 15rem;
+        left: 3%;
+    }
+}
