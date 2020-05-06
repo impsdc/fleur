@@ -1,0 +1,65 @@
+@font-face {
+  font-family: "roboto";
+  src: url(/public//assets/fonts/roboto/Roboto-Regular.ttf);
+}
+
+@font-face {
+  font-family: "Raleway_SM";
+  src: url(/public//assets/fonts/raleway/Raleway-SemiBold.ttf);
+}
+
+@font-face {
+  font-family: "Raleway";
+  src: url(/public//assets/fonts/raleway/Raleway-Medium.ttf);
+}
+
+html {
+  font-size: 100%;
+}
+
+body {
+  overflow-x: hidden;
+}
+
+header {
+  height: 10vh;
+}
+
+header nav ul li {
+  padding: 0 3rem;
+}
+
+header nav ul li a {
+  font-family: "Roboto", sans-serif;
+}
+
+main h1 {
+  font-size: 3rem;
+  display: block;
+  text-align: center;
+  margin: auto;
+  padding: 3rem 0;
+}
+
+main .wrapper {
+  margin: 0 auto;
+  display: -ms-grid;
+  display: grid;
+  -ms-grid-columns: (minmax(300px, 1fr))[auto-fit];
+      grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  grid-auto-flow: dense;
+  grid-column-gap: 5vw;
+  grid-row-gap: 10vh;
+  max-width: 1300px;
+}
+
+main .wrapper .grid_item {
+  border: 1px solid #0030FA;
+  border-radius: 20px;
+  height: 250px;
+}
+
+main .wrapper .grid_item img {
+  padding: 20px;
+}
+/*# sourceMappingURL=style.css.map */

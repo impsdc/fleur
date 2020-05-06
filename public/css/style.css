@@ -79,24 +79,94 @@ main .accueil .more div p {
   font-family: "Roboto", sans-serif;
 }
 
-main .accueil .more button {
-  border: #0030FA solid 1px;
-  background: transparent;
+main .accueil .more .wrapperBtn {
+  width: 10rem;
   border-radius: 20px;
-  padding: 5px 30px;
-  -webkit-transition: 0.5s;
-  transition: 0.5s;
 }
 
-main .accueil .more button:hover {
-  background: #0030FA;
+main .accueil .more button {
+  border: #0030fa solid 1px;
+  z-index: 1;
+  width: 10rem;
+  position: relative;
+  background: #0030fa;
+  border-radius: 20px;
+  padding: 5px 30px;
+  overflow: hidden;
   color: #fff;
+  -webkit-transition: color 0.5s ease-in-out;
+  transition: color 0.5s ease-in-out;
+}
+
+main .accueil .more button span {
+  font-size: 15px;
+  -webkit-transition: opacity 0.5s ease-in-out;
+  transition: opacity 0.5s ease-in-out;
+}
+
+main .accueil .more #btnContact::before {
+  content: "";
+  position: absolute;
+  border-radius: 20px;
+  color: #0030fa;
+  font-size: 1px;
+  border: #0030fa solid 1px;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: #fff;
+  font-size: 10px;
+  z-index: -1;
+  -webkit-transition: -webkit-transform 0.5s;
+  transition: -webkit-transform 0.5s;
+  transition: transform 0.5s;
+  transition: transform 0.5s, -webkit-transform 0.5s;
+  -webkit-transform-origin: 10rem 10rem;
+          transform-origin: 10rem 10rem;
+  -webkit-transform: scaleX(0);
+          transform: scaleX(0);
+}
+
+main .accueil .more #btnContact:hover {
+  color: #000000;
+  padding: 5px 10px;
+}
+
+main .accueil .more #btnContact:hover::before {
+  -webkit-transform: scaleX(1);
+          transform: scaleX(1);
+}
+
+main .accueil .more .effet {
+  font-size: 14px;
+  color: #000000;
+  -webkit-animation: fade linear 1s;
+          animation: fade linear 1s;
+}
+
+@-webkit-keyframes fade {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+
+@keyframes fade {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
 }
 
 main .accueil .reseaux ul li {
   display: block;
   margin: auto;
-  background: #0030FA;
+  background: #0030fa;
   margin: 1.5rem;
   padding: 10px 15px;
   border-radius: 50px;
@@ -172,9 +242,9 @@ main .projet .container_card .grid__item .coq {
       -ms-flex-pack: space-evenly;
           justify-content: space-evenly;
   border-radius: 20px;
-  border: 1px solid #0030FA;
-  -webkit-box-shadow: -8px 10px 1px #0030FA;
-          box-shadow: -8px 10px 1px #0030FA;
+  border: 1px solid #0030fa;
+  -webkit-box-shadow: -8px 10px 1px #0030fa;
+          box-shadow: -8px 10px 1px #0030fa;
   font-family: "Raleway_SM", sans-serif;
 }
 
@@ -214,7 +284,7 @@ main .projet .container_card .grid__item .description h4 {
 }
 
 main .projet .container_card .grid__item .description button {
-  border: #0030FA solid 1px;
+  border: #0030fa solid 1px;
   background: transparent;
   border-radius: 20px;
   padding: 5px 30px;
@@ -223,7 +293,7 @@ main .projet .container_card .grid__item .description button {
 }
 
 main .projet .container_card .grid__item .description button:hover {
-  background: #0030FA;
+  background: #0030fa;
   color: #fff;
 }
 
@@ -250,7 +320,7 @@ main .contact .title_contact h4 {
 
 main .contact .title_contact button {
   background: transparent;
-  color: #0030FA;
+  color: #0030fa;
   padding: 5px 30px;
   border-radius: 20px;
   color: #fff;
@@ -280,25 +350,25 @@ main .contact form .flex input {
 
 main .contact form input {
   margin: 2rem 0;
-  border-bottom: 1px solid #B3AEAE;
-  color: #0030FA;
+  border-bottom: 1px solid #b3aeae;
+  color: #0030fa;
   outline: none;
 }
 
 main .contact form textarea {
-  border-bottom: 1px solid #B3AEAE;
-  color: #0030FA;
+  border-bottom: 1px solid #b3aeae;
+  color: #0030fa;
   outline: none;
 }
 
 main .contact form #sub {
   display: block;
   margin-left: auto;
-  border: 1px solid #0030FA;
+  border: 1px solid #0030fa;
   color: #fff;
   padding: 5px 30px;
   border-radius: 20px;
-  background: #0030FA;
+  background: #0030fa;
   -webkit-transition: 0.5s;
   transition: 0.5s;
   cursor: pointer;
@@ -306,11 +376,11 @@ main .contact form #sub {
 
 main .contact form #sub:hover {
   background: transparent;
-  color: #0030FA;
+  color: #0030fa;
 }
 
 svg {
-  width: 18REM;
+  width: 18rem;
   position: absolute;
   bottom: 0%;
   left: 5%;
@@ -321,7 +391,8 @@ svg {
       justify-self: center;
 }
 
-svg #micro_bleu_bas, #micro_bleu_haut {
+svg #micro_bleu_bas,
+#micro_bleu_haut {
   -webkit-animation-duration: 1.2s;
           animation-duration: 1.2s;
   -webkit-animation-name: animate;
@@ -356,6 +427,15 @@ svg #micro_bleu_bas, #micro_bleu_haut {
             transform: translateX(25px) translateY(-25px);
     opacity: 1;
   }
+}
+
+.workTogether {
+  background: #fff !important;
+}
+
+.workTogether a {
+  color: #000000 !important;
+  font-size: 0.5rem;
 }
 
 .st0 {
@@ -535,7 +615,7 @@ svg #micro_bleu_bas, #micro_bleu_haut {
 }
 
 .st30 {
-  fill: #D6D6D6;
+  fill: #d6d6d6;
 }
 
 .st31 {
@@ -575,19 +655,19 @@ svg #micro_bleu_bas, #micro_bleu_haut {
 }
 
 .st37 {
-  fill: #0020A6;
+  fill: #0020a6;
 }
 
 .st38 {
-  fill: #001FA1;
+  fill: #001fa1;
 }
 
 .st39 {
-  fill: #001E9C;
+  fill: #001e9c;
 }
 
 .st40 {
-  fill: #002ADC;
+  fill: #002adc;
 }
 
 .st41 {
@@ -624,7 +704,7 @@ svg #micro_bleu_bas, #micro_bleu_haut {
   enable-background: new;
 }
 
-@media screen and (max-width: 1500px) {
+@media screen and (max-height: 690px) {
   main .accueil .w-52 {
     padding-bottom: 8%;
   }
@@ -632,5 +712,47 @@ svg #micro_bleu_bas, #micro_bleu_haut {
     width: 15rem;
     left: 3%;
   }
+}
+
+#btn {
+  background: none;
+  border: 1px solid #000;
+  padding: 12px 20px;
+  min-width: 200px;
+  margin: 10px;
+  -webkit-transition: color 0.4 linear;
+  transition: color 0.4 linear;
+  position: relative;
+}
+
+#btn:hover {
+  color: #fff;
+}
+
+#btn::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  right: 0;
+  width: 100%;
+  height: 100%;
+  z-index: -1;
+  background: #000;
+  -webkit-transition: -webkit-transform 0.5s;
+  transition: -webkit-transform 0.5s;
+  transition: transform 0.5s;
+  transition: transform 0.5s, -webkit-transform 0.5s;
+  -webkit-transform-origin: 200px 200px;
+          transform-origin: 200px 200px;
+}
+
+#btn::before {
+  -webkit-transform: scaleX(0);
+          transform: scaleX(0);
+}
+
+#btn:hover::before {
+  -webkit-transform: scaleX(1);
+          transform: scaleX(1);
 }
 /*# sourceMappingURL=style.css.map */
